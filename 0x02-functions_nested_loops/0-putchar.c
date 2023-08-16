@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main: 'A program that prints _putchar'
- *
+ * main - Entry point
+ * Description: 'A program that prints _putchar'
  * Return: 0 (Success)
  */
 int main(void)

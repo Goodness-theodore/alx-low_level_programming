@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * _putchar - writes character c to stdout
+ * _putchar - Writes character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.

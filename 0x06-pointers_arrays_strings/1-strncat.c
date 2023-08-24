@@ -14,10 +14,11 @@
  * Return: A pointer to the resulting string dest.
  */
 
-*_strncat(char *dest, char *src, int n )
-
+char *_strncat(char *dest, char *src, int n)
 {
-	int index = 0, dest_len = 0;
+
+	int index = 0; 
+	int dest_len = 0;
 
 	while (dest[index++])
 		dest_len++;

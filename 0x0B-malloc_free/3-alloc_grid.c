@@ -1,13 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * alloc_grind - nested loops to make grind
+ * alloc_grid - nested loops to make grind
  * @width: width of the grind
  * @height: height of the grind
  *
  * Return: 0.
  */
-
 int **alloc_grid(int width, int height)
 {
 	int i, n, m, p;

@@ -1,8 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
-
 /**
- * alloc_grind - returns a grind of integers
+ * alloc_grind - nested loops to make grind
  * @width: width of the grind
  * @height: height of the grind
  *
@@ -11,38 +10,39 @@
 
 int **alloc_grid(int width, int height)
 {
-	int i, j, k, l;
-	int **a;
+	int i, n, m, p;
+	int **q;
 
 	if (width <= 0 || height <= 0)
-		return (NULL);
-	a = malloc(sizeof(int *) * height);
-
-	if (a == NULL)
 	{
-		free(a);
 		return (NULL);
 	}
-	for (i = 0, i < height; i++)
+	else
 	{
-		a[i] = malloc(sizeof(int) * width);
-
-		if (a[i] == NULL)
+		q = (int **) malloc(height * sizeof(int *));
+		if (!q)
 		{
-			for (j = i; j >= 0; j--)
-			{
-				free(a[j]);
-			}
-			free(a);
-			return (NULL);
-			}
-	}
-	for (k = 0; k < height; k++)
-	{
-		for (l = 0; l < width; l++)
-		{
-			a[k][l] = 0;
+		free(q);
+		return (NULL);
 		}
+		for (i = 0; i < height; i++)
+		{
+			q[i] = (int *) malloc(width * sizeof(int));
+			if (!q[i])
+			{
+				for (n = 0; n <= i; n++)
+					free(q[n]);
+				free(q);
+				return (NULL);
+			}
+		}
+		for (m = 0; m < height; m++)
+		{
+			for (p = 0; p < width; p++)
+			{
+				q[m][p] = 0;
+			}
+		}
+		return (q);
 	}
-	return (a);
 }
